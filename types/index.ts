@@ -1,10 +1,18 @@
+// Furigana 注音项
+export interface FuriganaItem {
+  word: string
+  reading: string
+  start: number
+  end: number
+}
+
 // 歌词行
 export interface Line {
   id: string
   songId?: string
   contentJa: string
   contentZh: string
-  furigana?: string
+  furigana?: FuriganaItem[]
   startTime: number
   endTime: number
   position?: 'verse' | 'chorus' | 'bridge'

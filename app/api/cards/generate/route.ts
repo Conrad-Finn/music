@@ -61,7 +61,7 @@ export async function POST(request: NextRequest) {
       id: line.id,
       contentJa: line.contentJa,
       contentZh: line.contentZh || '',
-      furigana: line.furigana || '',
+      furigana: line.furigana || [],
       startTime: line.startTime || 0,
       endTime: line.endTime || 0,
     });
