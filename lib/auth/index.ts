@@ -26,6 +26,14 @@ export type UserRole = 'guest' | 'user' | 'admin';
  * Better Auth 实例配置
  */
 export const auth = betterAuth({
+  // 基础 URL（生产环境必须设置）
+  baseURL: process.env.BETTER_AUTH_URL,
+
+  // 可信域名（解决跨域 cookie 问题）
+  trustedOrigins: process.env.BETTER_AUTH_URL
+    ? [process.env.BETTER_AUTH_URL]
+    : ['http://localhost:3000'],
+
   // 数据库适配器
   database: drizzleAdapter(db, {
     provider: 'pg',
