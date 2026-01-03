@@ -15,7 +15,7 @@ export interface Line {
   furigana?: FuriganaItem[]
   startTime: number
   endTime: number
-  position?: 'verse' | 'chorus' | 'bridge'
+  position?: 'verse' | 'chorus' | 'bridge' | 'pre-chorus'
   emotion?: 'sweet' | 'sad' | 'hype' | 'nostalgic'
 }
 

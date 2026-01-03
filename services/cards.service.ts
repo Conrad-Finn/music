@@ -151,10 +151,11 @@ export async function getCards(options: CardsQueryOptions = {}): Promise<{
 
   // 如果有用户 ID，关联进度表
   if (userId) {
+    // @ts-expect-error - 动态添加 leftJoin 导致类型不兼容
     query = query.leftJoin(
       cardProgress,
       and(eq(cardProgress.cardId, cards.id), eq(cardProgress.userId, userId))
-    ) as typeof query;
+    );
   }
 
   // 构建条件

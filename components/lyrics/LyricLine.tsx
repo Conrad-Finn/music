@@ -85,8 +85,10 @@ export function LyricLine({
       </p>
 
       {/* 假名注音（可选显示） */}
-      {line.furigana && isCurrent && (
-        <p className="text-xs text-muted-foreground mt-0.5">{line.furigana}</p>
+      {line.furigana && line.furigana.length > 0 && isCurrent && (
+        <p className="text-xs text-muted-foreground mt-0.5">
+          {line.furigana.map(f => f.reading).join(' ')}
+        </p>
       )}
 
       {/* 中文翻译 */}

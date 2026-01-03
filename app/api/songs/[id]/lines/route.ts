@@ -19,8 +19,17 @@ const updateLinesSchema = z.object({
       lineNumber: z.number(),
       contentJa: z.string().optional(),
       contentZh: z.string().optional(),
-      furigana: z.string().optional(), // JSON 字符串
-      tokens: z.string().optional(), // JSON 字符串
+      furigana: z.array(z.object({
+        word: z.string(),
+        reading: z.string(),
+        start: z.number(),
+        end: z.number(),
+      })).optional(),
+      tokens: z.array(z.object({
+        word: z.string(),
+        reading: z.string(),
+        pos: z.string(),
+      })).optional(),
       startTime: z.number().optional(),
       endTime: z.number().optional(),
     })

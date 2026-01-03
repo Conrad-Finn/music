@@ -66,12 +66,6 @@ export const auth = betterAuth({
       },
     },
   },
-
-  // 安全配置
-  advanced: {
-    // 生成安全的会话 token
-    generateId: () => crypto.randomUUID(),
-  },
 });
 
 /**

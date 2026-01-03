@@ -45,8 +45,8 @@ export interface CreateLineInput {
   lineNumber: number;
   contentJa: string;
   contentZh?: string;
-  furigana?: Array<{ word: string; reading: string; start: number; end: number }> | string;
-  tokens?: Array<{ word: string; reading: string; pos: string }> | string;
+  furigana?: Array<{ word: string; reading: string; start: number; end: number }>;
+  tokens?: Array<{ word: string; reading: string; pos: string }>;
   startTime?: number;
   endTime?: number;
 }
