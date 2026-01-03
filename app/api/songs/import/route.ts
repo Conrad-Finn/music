@@ -45,7 +45,7 @@ const importSongSchema = z.object({
       cardsPerLine: z.number().min(1).max(3).default(1), // 每行生成词卡数
     })
     .optional()
-    .default({}),
+    .default({ parseWithAI: true, generateCards: false, cardsPerLine: 1 }),
 });
 
 /**
