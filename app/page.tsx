@@ -100,7 +100,7 @@ export default function HomePage() {
       if (stored) {
         const parsed = JSON.parse(stored)
         if (parsed.state?.songs) {
-          const favIds = new Set(
+          const favIds = new Set<string>(
             parsed.state.songs
               .filter((s: { isFavorite?: boolean }) => s.isFavorite)
               .map((s: { id: string }) => s.id)
