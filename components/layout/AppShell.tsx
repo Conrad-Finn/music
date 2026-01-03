@@ -2,7 +2,6 @@
 
 import { cn } from '@/lib/utils'
 import { BottomNav } from './BottomNav'
-import { MockModeIndicator } from './MockModeIndicator'
 import { MiniPlayer } from '@/components/player/MiniPlayer'
 
 interface AppShellProps {
@@ -20,9 +19,6 @@ export function AppShell({
 }: AppShellProps) {
   return (
     <div className={cn('min-h-screen bg-background', className)}>
-      {/* Mock 模式指示器 */}
-      <MockModeIndicator />
-
       {/* 主内容区域 */}
       <main
         className={cn(

@@ -29,7 +29,7 @@ export const useAppStore = create<AppState>()(
       theme: 'dark',
       showMiniPlayer: true,
       isFullPlayerOpen: false,
-      useMockMode: true,
+      useMockMode: false,
 
       toggleSidebar: () => set((s) => ({ sidebarOpen: !s.sidebarOpen })),
       setSidebarOpen: (open) => set({ sidebarOpen: open }),

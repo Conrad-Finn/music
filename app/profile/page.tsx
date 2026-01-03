@@ -10,9 +10,8 @@ import { Header } from '@/components/layout/Header'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
 import { Switch } from '@/components/ui/switch'
-import { User, Music, BookOpen, Moon, Sun, Info, LogOut, Shield } from 'lucide-react'
+import { User, Music, BookOpen, Moon, Sun, LogOut, Shield } from 'lucide-react'
 import { StorageManager } from '@/components/storage'
 
 // 角色标签配置
@@ -23,7 +22,7 @@ const roleLabels = {
 }
 
 export default function ProfilePage() {
-  const { useMockMode, setMockMode, theme, setTheme } = useAppStore()
+  const { theme, setTheme } = useAppStore()
   const { getCardStats } = useCardStore()
   const { songs, getFavorites } = useSongStore()
   const { user, isAuthenticated, isLoading, signOut, isAdmin } = useAuth()
@@ -169,18 +168,6 @@ export default function ProfilePage() {
               <CardTitle className="text-base">设置</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              {/* Mock 模式 */}
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <Info className="h-4 w-4 text-muted-foreground" />
-                  <div>
-                    <p className="text-sm font-medium">演示模式</p>
-                    <p className="text-xs text-muted-foreground">使用本地模拟数据</p>
-                  </div>
-                </div>
-                <Switch checked={useMockMode} onCheckedChange={setMockMode} />
-              </div>
-
               {/* 深色模式 */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
@@ -211,9 +198,6 @@ export default function ProfilePage() {
               <div className="text-center text-sm text-muted-foreground">
                 <p>听日文歌 v1.0.0</p>
                 <p className="mt-1">听歌顺手一点点听懂</p>
-                <Badge variant="secondary" className="mt-2">
-                  演示版本
-                </Badge>
               </div>
             </CardContent>
           </Card>
