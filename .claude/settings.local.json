@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)",
+      "Bash(bunx drizzle-kit:*)",
+      "Bash(bun run:*)",
+      "Bash(tasklist:*)",
+      "Bash(findstr:*)",
+      "WebFetch(domain:cnb.cool)"
+    ]
+  }
+}
