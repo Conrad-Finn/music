@@ -108,6 +108,14 @@ cd src && bun db:push    # 推送 schema 到数据库
 cd src && bun db:studio  # 打开 Drizzle Studio
 ```
 
+## AI 配置
+
+| 配置项 | 值 |
+|-------|-----|
+| API 地址 | `https://api.siliconflow.cn/v1/` |
+| 模型 | `Qwen/Qwen3-30B-A3B` |
+| 歌词翻译 | 每 8 行为一组，控制吞吐量 |
+
 ## 开发约定
 
 - **中文沟通**: 所有注释、文档使用中文
@@ -116,6 +124,7 @@ cd src && bun db:studio  # 打开 Drizzle Studio
 - **时间单位**: MOCK_SONGS 中 startTime/endTime 为秒，数据库中为毫秒
 - **音频文件**: 测试用音频放在 `public/mock/audio/`
 - **样式**: 使用 Tailwind + cn() 工具函数，组件用 shadcn/ui
+- **AI 歌词翻译**: 每次处理 8 行歌词，避免 API 吞吐量限制
 
 ## 当前状态
 
