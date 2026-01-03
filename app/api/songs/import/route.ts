@@ -170,7 +170,7 @@ export async function POST(request: NextRequest) {
             id: line.id,
             contentJa: line.contentJa,
             contentZh: line.contentZh || '',
-            furigana: typeof line.furigana === 'string' ? line.furigana : '',
+            furigana: Array.isArray(line.furigana) ? line.furigana : [],
             startTime: line.startTime || 0,
             endTime: line.endTime || 0,
           });
